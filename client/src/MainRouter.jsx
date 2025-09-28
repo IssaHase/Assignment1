@@ -1,24 +1,26 @@
-import { Routes, Route } from "react-router-dom";
-import Projects from "./components/projects";
-import Home from "./components/Home";
-import About from "./components/About";
-import NotFound from "./components/NotFound";
-import Layout from "./components/Layout";
-import Services from "./components/Services";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout.jsx";
+import Home from "./Home.jsx";
+import About from "./About.jsx";
+import Projects from "./projects.jsx";
+import Services from "./Services.jsx";
+import Contact from "./Contact.jsx";
+import NotFound from "./NotFound.jsx";
 
-function MainRouter() {
-    return (
-        <div>
-            <Layout />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </div>
-    )
+export default function MainRouter() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* All pages render inside Layout */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="services" element={<Services />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default MainRouter;

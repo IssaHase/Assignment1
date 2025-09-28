@@ -1,25 +1,24 @@
-import ListComponent from "./ListComponent";
-import photo10 from '../assets/photo10.jpg';
-import photo11 from '../assets/photo11.jpg';
-import photo12 from '../assets/photo12.jpg';
-
-const data = [
-     { 
-          imagePath: photo10, 
-          title: 'Title 01',
-          text: 'This is the first item'
-     },
-     { imagePath: photo11, title: 'Title 02', text: 'This is the second item' },
-     { imagePath: photo12, title: 'Title 03', text: 'This is the third item' },
-]
-
-function Projects(){
-    return(
+export default function Projects() {
+    return (
+      <section>
+        <h2>Projects</h2>
+  
         <div>
-            <h3>Projects</h3>
-            <ListComponent items={data}/>
+          <img src="/assets/project1.png" alt="EduAI Project" />
+          <h3>EduAI (LMS Assistant)</h3>
+          <p>
+            Helps students navigate Luminate. Includes SRS, use cases, class diagrams, and state diagrams.
+          </p>
         </div>
+  
+        <div>
+          <img src="/assets/project2.png" alt="Portfolio Project" />
+          <h3>Portfolio Website</h3>
+          <p>
+            Personal portfolio site showcasing skills, services, and contact form.
+          </p>
+        </div>
+      </section>
     );
-}
-
-export default Projects;
+  }
+  
